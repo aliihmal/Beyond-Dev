@@ -1,0 +1,88 @@
+.logoAndword{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position:absolute;
+  left: 100px;
+}
+#logo{
+  width: 100px;   
+  
+}
+#bd{
+  color:rgb(149, 149, 242);
+   
+}
+.header{
+  display: flex;
+  flex-direction: row;
+}
+.section{
+  display: flex;
+  flex-direction: row;
+  gap:30px;
+  position: absolute;
+  left: 750px;
+  top:40px;
+}
+#sec{
+  width: 100px;
+  height: 100px;
+  
+}
+.auth{
+  position:absolute;
+  left:1300px;
+  gap:10px;
+  display: flex;
+}
+#log{
+  width: 150px;
+  height: 90px;
+   color: blue;
+  background-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(45, 45, 255);
+  border-radius: 10%;
+}
+#sign{
+  width: 150px;
+  height: 90px;
+  color: white;
+  background-color: rgb(45, 45, 255);
+  border:none;
+  border-radius: 10%;
+}
+
+.center{
+  position: absolute;
+  top: 250px;
+  display: flex;
+  flex-direction: row;
+}
+#welcome{
+  color :blue;
+  width: 300px;
+  font-size: 20px;
+}
+#mot{
+  font-size: 50px;
+}
+.first{
+  margin-left: 100px;
+  background-color: rgb(246, 250, 253);
+  width: 850px;
+  position: absolute;
+  top:-50px;
+  height: 550px;
+}
+#study{
+  position: absolute;
+  left:950px;
+  top:-50px;
+}
+
+#description{
+  font-size: 30px;
+}

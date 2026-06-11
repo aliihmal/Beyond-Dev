@@ -1,0 +1,155 @@
+.container{
+   background-color: rgb(238, 238, 252);
+  height: 910px;
+  position: absolute;
+  top:0;
+  width: 1900px;
+}
+
+.subcontainer{
+    background-color: white;
+    width: 1800px;
+    height: 870px;
+    position:absolute;
+    left:40px;
+    top:20px;
+    border-radius: 4%;
+    display: flex;
+    flex-direction: row;
+}
+.one-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#lg{
+    width: 100px;   
+}
+#title{
+    font-size: 30px;
+}
+#title{
+    display: flex;
+    flex-direction: row;
+}
+#s{
+    color:rgb(87, 86, 239)
+
+}
+
+#lt{
+    font-size: 50px;
+    margin-left: 50px;
+}
+#lto{
+    font-size: 50px;
+    
+    margin-left: 50px;
+    color:rgb(87, 86, 239)
+
+}
+
+.one{
+    background-color: rgb(247, 246, 253);
+    width: 40%;
+    height: inherit;
+    border-top-left-radius: 4%;
+    border-bottom-left-radius: 4%;
+}
+.stgl{
+    width:720px;
+    height: 400px;;
+}
+
+.last{
+    position: absolute;
+    top:710px;
+    height: 157px;
+    width: 720px;
+    border-bottom-left-radius: 4%;;
+    background-color:rgb(238, 238, 253);
+}
+.content{
+    display:  flex;
+    flex-direction: row;
+    background-color: white;
+    width:400px;
+    margin-left: 120px;
+    border-radius: 8%;
+    gap: 20px;
+  
+}
+.assurance{
+    border-radius: 100%;
+    border-style: solid;
+    border-color: rgb(245, 244, 255);
+    border-width: 4px;
+    background-color: white;
+}
+.two{
+    width:100px     ;
+    height: inherit;
+    border-top-left-radius: 4%;
+    border-bottom-left-radius: 4%;
+}
+
+.signup-container{
+    background-color: black;
+}
+
+#asking{
+    margin-left:800px;
+    width: 230px;
+    font-size: 20px;
+}
+
+
+.signupmiddle{
+    width: 500px;
+    height: 200px;
+    margin-left: 350px;
+    align-content: center;
+}
+#starting{
+    color: gray;
+    font-size: 20px;
+    
+}
+#Mh{
+    font-size: 50px;
+}
+
+.input-container {
+  position: relative;
+  width: 300px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+.input-container input {
+  width: 350px;
+  height: 50px;
+  padding: 10px 10px 10px 40px; /* space for icon */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.signupform{
+    margin-left: 350px;
+    
+}
+#btn{
+    width: 400px;
+    height: 60px;
+    border: none;
+    border-radius: 10%;
+    background-color: rgb(73, 71, 238);
+    color: white;
+}
