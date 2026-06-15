@@ -4,6 +4,7 @@ import { DBexception, InitializabelException } from "../util/Exception/RepoExcep
 import logger from "../util/logger";
 import { ConnectionManager } from "./ConnectionManager";
 import { id, Initializabel, IRpository } from "./IRepository";
+import { notFoundExceptiong } from "../util/Exception/NoteFoundException";
 
 
 
@@ -29,7 +30,7 @@ const GET_ALL =`SELECT *
                 FROM "user"`;
 
 const DELETE_ID = `DELETE FROM "user"  WHERE id = ? `;
-
+const GET_EMAIL = `SELECT * FROM "user" WHERE email= ? `;
 export class UserRepostory implements IRpository<User>,Initializabel{
     async init(): Promise<void> {
         try{
@@ -96,6 +97,21 @@ export class UserRepostory implements IRpository<User>,Initializabel{
             logger.error("error while deleting user of id " + id);
             throw new DBexception("error while deleting user of id " + id,error as Error);
         }
+    }
+
+    async findByEmail(email:string):Promise<User>{
+        try{
+            const conn =await ConnectionManager.getConnection();
+            const user = await conn.get<User>(GET_EMAIL,email);
+            if(!user){
+             throw new notFoundExceptiong("user of email" + email + " was not found");
+            }
+            return user
+        }catch(error){
+            logger.error("error while getting user of email" + email);
+            throw new DBexception("error while getting user of email" + email,error as Error);
+        }
+        
     }
 
 }

@@ -58,6 +58,9 @@ function Home() {
            <Link to="/signup">
               <button id='sign'>Sign Up</button>
           </Link>
+          <Link to="/loggedIn">
+              <button>logged</button>
+          </Link>
       </div>
     </div>
 

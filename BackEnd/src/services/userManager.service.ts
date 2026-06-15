@@ -1,6 +1,7 @@
 import { User } from "../model/user.model";
 import { id } from "../Repository/IRepository";
 import {  CreateUserRepo, UserRepostory } from "../Repository/user.Repo";
+import { notFoundExceptiong } from "../util/Exception/NoteFoundException";
 
 export class UserManager {
     private  userRepo!:UserRepostory;
@@ -31,5 +32,17 @@ export class UserManager {
     }
     async deleteUser(id:id):Promise<void>{
         await (await this.getRepo()).delete(id);
+    }
+    async validateuser(email:string,password:string):Promise<id>{
+        const user = await (await this.getRepo()).findByEmail(email);
+        if(!user){
+            throw new notFoundExceptiong("user not found");
+        }
+
+        if(user.password!=password){
+            throw new notFoundExceptiong("Invalid password");
+        
+        }
+        return user.id;
     }
 }

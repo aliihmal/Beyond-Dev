@@ -15,6 +15,7 @@ export class ConnectionManager{
             }
             return this.db
         }catch(error){
+             logger.error("Failed to connect to the database ",error as Error) ;
             throw new Error("Error while connecting to the database ");
         }
     }

@@ -3,10 +3,11 @@ import config from "./config";
 import logger from "./util/logger";
 import cors from "cors";
 import bodyParser, { urlencoded } from 'body-parser';
-import express from "express";
+import express, { NextFunction, Request, Response } from "express";
 import { requestLogger } from "./middelware/requestLogger";
 import route from "./routes/user.route";
 import router from "./routes";
+import { httpExecption } from "./util/Exception/httpsException";
 const app = express() ;
 
 app.use(helmet());
@@ -19,6 +20,20 @@ app.use('/',router);
 
 app.use((req,res)=>{
     res.status(404).json({error:"NOt Found "});
+})
+
+app.use((err:Error,req:Request,res:Response,next:NextFunction)=>{
+    if(err instanceof httpExecption){   
+        const httpexception = err as httpExecption;
+        logger.error("%s [%d] : \ %s \%s %o",httpexception.name,httpexception.status,httpexception.message,httpexception.details||{});
+        res.status(httpexception.status).json({
+            message :httpexception.message,
+            details:httpexception.details||undefined,
+        })
+    }else{
+        logger.error("internal server Error %s", err.message);
+        res.status(500).json({message:"couldn't handel the request"})
+    }
 })
 app.listen(config.port,config.host,()=>{
     logger.info("the app is running on http://%s:%d",config.host,config.port);
