@@ -25,3 +25,9 @@ export class ServiceException extends Error{
         this.name= "ServiceException";
     }
 }
+export class AuthenticationFailed extends AuthenticationException{
+    constructor(){
+        super("Authentication failed");
+        this.name="AuthenticationFailedException";
+    }
+}

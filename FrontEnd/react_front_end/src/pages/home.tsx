@@ -2,11 +2,17 @@ import './home.css';
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Link } from 'react-router-dom';
+import Marketing from '../components/Marketing';
 
 function Home() {
   const logoRef = useRef<HTMLImageElement | null>(null);
   const LL =useRef<HTMLParagraphElement |null>(null);
   const desc= useRef<HTMLParagraphElement|null>(null);
+  const mark  =useRef<HTMLDivElement|null>(null);
+  const mark1 =useRef<HTMLDivElement|null>(null);
+  const mark2 =useRef<HTMLDivElement|null>(null);
+  const mark3 =useRef<HTMLDivElement|null>(null);
+
   useEffect(() => {
     const tl = gsap.timeline();
     tl.fromTo(logoRef.current, {
@@ -25,11 +31,20 @@ function Home() {
       x:0,
     }).fromTo(desc.current, {
       opacity: 0,
-      y:-100,
+      x:100,
     },{
        opacity: 1,
-      y:0,
+      x:0,
       duration:1.5,
+    }).fromTo([mark.current,mark1.current,mark2.current,mark3.current],{
+      opacity:0,
+      y:100,
+    },{
+      opacity:1,
+      y:0,
+      stagger:{
+            amount:0.5,
+          }
     });
   }, []);
 
@@ -77,6 +92,15 @@ function Home() {
           <img id="study"src='/study.png'/>
         </div>
     </div>
+          <div id='mark'>
+             <div ref={mark}><Marketing  title='security' descreption='Provide a high security for your data' /></div>
+             <div ref={mark1}><Marketing title='efficient' descreption='boost your productivity ' /></div>
+             <div ref={mark2}><Marketing  title='easy' descreption='Provide a very easy user interface'/></div> 
+             <div ref={mark3}><Marketing title='expirence' descreption='created from college student to college student' /></div>
+          </div>
+          <Link to={"dashboard"}>
+            <button>dashboard</button>
+          </Link>
     </div>
   );
 }

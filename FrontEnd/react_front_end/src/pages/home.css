@@ -86,3 +86,16 @@
 #description{
   font-size: 30px;
 }
+
+#mark{
+  position: absolute;
+  top:750px;
+  gap: 20px;
+  left:300px;
+  justify-content: center; 
+  align-items: center;  
+  width: 1200px;
+  
+  display: flex;
+  flex-direction: row;
+}

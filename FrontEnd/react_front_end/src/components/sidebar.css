@@ -1,0 +1,31 @@
+#thelist{
+    list-style-type: none;
+}
+#ih{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#sh{
+    width: 150px;
+}
+.SBcontainer{
+    width: 330px;
+    position: absolute;
+     top: -10px;
+  left: -30px;
+}
+
+#SBb{
+    width: 300px;
+    border: none;
+    border-radius: 4%;
+}
+.SBBcontainer{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+#SBT{
+    font-size: 20px;
+}

@@ -1,0 +1,19 @@
+#divider{
+    width: 2px;
+    background-color: rgb(213, 213, 213);
+    height: 99%;
+    position:absolute;
+    left: 350px;
+}
+.DBcontainer{
+    display: flex;
+    flex-direction: row;
+}
+.studentInfoContainer{
+    left:352px;
+    height: 814px;
+    position: absolute;
+    background-color: rgb(246, 250, 253);
+    width: 1503px;
+    top:100px;
+}

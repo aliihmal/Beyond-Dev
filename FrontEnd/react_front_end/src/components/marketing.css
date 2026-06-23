@@ -1,0 +1,15 @@
+.cont{
+   
+    width: 200px;
+    background-color: rgb(246, 250, 253);
+    border-radius: 10%;
+    border-width: 3px;
+    border-color: rgb(136, 136, 255);
+    border-style: solid;
+    height: 100px;
+}
+
+#tti{
+    text-align: center;
+    color: black
+}

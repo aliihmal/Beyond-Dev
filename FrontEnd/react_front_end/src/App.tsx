@@ -3,6 +3,7 @@ import Home from "./pages/home";
 import SignUp from "./pages/Signup";
 import LoggedIn from "./pages/LoggedIn";
 import ProtectedLogin from "./components/protectedlogin";
+import DashBoard from "./pages/dashboard";
 
 function App(){
   return (
@@ -13,6 +14,7 @@ function App(){
         <Route path="/loggedIn" element={<ProtectedLogin>
           <LoggedIn/>
         </ProtectedLogin>}/>
+        <Route path="/dashboard" element={<DashBoard/>}/>
         
       </Routes>
     </BrowserRouter>
