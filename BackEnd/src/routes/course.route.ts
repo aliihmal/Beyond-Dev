@@ -13,4 +13,6 @@ route.route("/student/:studentId")
             .get(asyncHandler(coursecontrol.getByStudentId.bind(coursecontrol)));
 route.route("/:id")
             .get(asyncHandler(coursecontrol.getCourse.bind(coursecontrol)));
+route.route("/nbofcourses/:studentId")
+                .get(asyncHandler(coursecontrol.getCountOfCourses.bind(coursecontrol)));
 export default route;

@@ -76,8 +76,8 @@ export class courseRepository implements IRpository<Course>,Initializabel{
         }
         return courses;
        }catch(error){
-        logger.error("no Courses where retrived for the user ");
-        throw new DBexception("no Courses where retrived for the user",error as Error);
+        logger.error("no Courses where retrived for the user dd");
+        throw new DBexception("no Courses where retrived for the userdd",error as Error);
        }
     }
     update(item: Course): Promise<void> {

@@ -26,4 +26,9 @@ export class AssignmentManager {
         const result = await (await this.getRepo()).getCourseAssignment(courseId,userId);
         return result;
     }
+    async getAssignmentNbForstudent(studentId:string):Promise<number>{
+        const assignments  = await (await this.getRepo()).getUserAssignment(studentId);
+        const nb = assignments.length;
+        return nb;
+    }
 }

@@ -38,4 +38,11 @@ export class CourseController{
                             "courses":courses,
         });
     }
+    async getCountOfCourses(req:Request,res:Response):Promise<void>{
+        const studentId =req.params.studentId as string;
+        const nbOfCourses  = await this.courseservice.getNumberOfStudentCourses(studentId);
+        res.status(200).json({"message" : "The nb of courses are retrived correctly ",
+                            "nb":nbOfCourses
+        })
+    }
 }

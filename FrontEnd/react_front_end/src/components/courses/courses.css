@@ -1,0 +1,34 @@
+.coursecontainer{
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 20px;
+        border-color: rgb(239, 235, 235);
+        width: 350px;
+        height: 200px;
+        background-color: white;
+        margin-left: 30px;
+}
+#coursesubcontainer{
+    display: flex;
+    flex-direction: row;
+}
+#count{
+    font-size: 80px;
+    position: absolute;
+    left:180px;
+    top: 50px;
+}
+#cimg{
+        height: 130px;
+}
+#va{
+    position:absolute;
+    left: 70px;
+    color:rgb(94, 94, 255);
+    top:220px
+}
+#acourses{
+    color:gray;
+    position: absolute;
+    top:200px;
+}

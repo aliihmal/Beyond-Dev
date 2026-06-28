@@ -33,7 +33,7 @@ export class UserManager {
     async deleteUser(id:id):Promise<void>{
         await (await this.getRepo()).delete(id);
     }
-    async validateuser(email:string,password:string):Promise<id>{
+    async validateuser(email:string,password:string):Promise<User>{
         const user = await (await this.getRepo()).findByEmail(email);
         if(!user){
             throw new notFoundExceptiong("user not found");
@@ -43,6 +43,6 @@ export class UserManager {
             throw new notFoundExceptiong("Invalid password");
         
         }
-        return user.id;
+        return user;
     }
 }

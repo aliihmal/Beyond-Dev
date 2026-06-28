@@ -13,10 +13,11 @@ export class AuthenticationController{
                 password:!password
             });
         }
-         const userId= await this.userservice.validateuser(email,password);
+         const user= await this.userservice.validateuser(email,password);
         res.status(200).json({
             message:'login successfuly alii',
-            token:this.authservice.generateToken(userId)
+            token:this.authservice.generateToken(user.id),
+            user:user
         })
     }
 }

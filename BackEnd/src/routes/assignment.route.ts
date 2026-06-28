@@ -17,4 +17,6 @@ route.route("/user/:userid")
             .get(asyncHandler(assignmentcontrol.getBStudentId.bind(assignmentcontrol)));
 route.route("/course/:courseId/user/:userId")
         .get(asyncHandler(assignmentcontrol.getByCoureId.bind(assignmentcontrol)));
+route.route("/nbOfAssignment/:studentId")
+        .get(asyncHandler(assignmentcontrol.getAssignmentNb.bind(assignmentcontrol)));
 export default route;

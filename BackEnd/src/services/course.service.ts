@@ -23,4 +23,9 @@ export class courseManager{
         const courses = await (await this.getRepo()).getByStudentId(studentId);
         return courses;
     }
+    async getNumberOfStudentCourses(studentId:string):Promise<number>{
+        const courses = await (await this.getRepo()).getByStudentId(studentId);
+        const number = courses.length;
+        return number;
+    }
 }

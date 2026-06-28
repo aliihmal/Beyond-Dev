@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import "./courses.css";
-import { SiNba } from "react-icons/si";
-function Courses() {
+import "./tasks.css"
+function Task() {
     const token = localStorage.getItem("token");
-    const [count,setcount] = useState(0);
+    const [counts,setcounts] = useState(0);
     useEffect(() => {
         const fetchCourses = async () => {
             const user = JSON.parse(
@@ -12,7 +11,7 @@ function Courses() {
             const userid =user.id;
 
             const response2 = await fetch(
-                `http://localhost:3000/course/nbofcourses/${userid}`,
+                `http://localhost:3000/assignment/nbOfAssignment/${userid}`,
                   {
                 headers: {
                  Authorization: `Bearer ${token}`,
@@ -20,7 +19,7 @@ function Courses() {
   }
             );
             const nb = await response2.json();
-            setcount(nb.nb);
+            setcounts(nb.nb);
         };
 
         fetchCourses();
@@ -28,14 +27,14 @@ function Courses() {
 
     return (
         <div>
-            <div className="coursecontainer">
-                <div id="coursesubcontainer">
-                    <img id="cimg" src="/courselogo.png"/>
+            <div className="taskcontainer">
+                <div id="tasksubcontainer">
+                    <img id="taskcimg" src="/tasklogo.png"/>
                     <div>
-                        <h3>Courses</h3>
-                        <p id="count"><b> {count} </b></p>
-                        <p id="acourses">Active Courses</p>
-                        <p id="va">View All </p>
+                        <h3 id="t">Tasks</h3>
+                        <p id="taskcount"><b> {counts} </b></p>
+                        <p id="atask">Active Tasks</p>
+                        <p id="vatask">View All </p>
                     </div>
                 </div>
             </div>
@@ -43,4 +42,4 @@ function Courses() {
     );
 }
 
-export default Courses;
+export default Task;

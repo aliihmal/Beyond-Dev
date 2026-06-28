@@ -2,7 +2,7 @@ import './home.css';
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Link } from 'react-router-dom';
-import Marketing from '../components/Marketing';
+import Marketing from '../components/marketing/Marketing';
 
 function Home() {
   const logoRef = useRef<HTMLImageElement | null>(null);
@@ -13,6 +13,10 @@ function Home() {
   const mark2 =useRef<HTMLDivElement|null>(null);
   const mark3 =useRef<HTMLDivElement|null>(null);
 
+   const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+  };
   useEffect(() => {
     const tl = gsap.timeline();
     tl.fromTo(logoRef.current, {
@@ -54,6 +58,7 @@ function Home() {
   
     <div className="header">
       <div className="logoAndword">
+      
         <img
           ref={logoRef}
           src="/BeyondDevLogo.png"
@@ -73,9 +78,7 @@ function Home() {
            <Link to="/signup">
               <button id='sign'>Sign Up</button>
           </Link>
-          <Link to="/loggedIn">
-              <button>logged</button>
-          </Link>
+       
       </div>
     </div>
 
@@ -98,9 +101,7 @@ function Home() {
              <div ref={mark2}><Marketing  title='easy' descreption='Provide a very easy user interface'/></div> 
              <div ref={mark3}><Marketing title='expirence' descreption='created from college student to college student' /></div>
           </div>
-          <Link to={"dashboard"}>
-            <button>dashboard</button>
-          </Link>
+          
     </div>
   );
 }

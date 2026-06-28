@@ -74,9 +74,7 @@ export class AssignmentRepository implements IRpository<Assignment>,Initializabe
         try{
             const conn = await ConnectionManager.getConnection();
             const result = await conn.all<Assignment[]>(GET_USER_ID,[userId]);
-            if(result.length === 0){
-                throw new Error("Assignment of the user was not found");
-            }
+            
             logger.info("retrived the assignment of the student");
             return result;
         }catch(error){

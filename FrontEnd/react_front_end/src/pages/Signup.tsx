@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./Signup.css"
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function SignUp() {
   const [isOpen, setIsOpen] = useState(true);
 
+      const navigate=useNavigate();
 
   const [loginData, setloginData] = useState({
     email: "",
@@ -48,7 +50,9 @@ function SignUp() {
         }
       );
       const data = await response.json();
+      localStorage.setItem("user",JSON.stringify(data.user));
       localStorage.setItem("token", data.token);
+       navigate("/dashboard");
     } catch (error) {
       console.error("Error:", error);
 

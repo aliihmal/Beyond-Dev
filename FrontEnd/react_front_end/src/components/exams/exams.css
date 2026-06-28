@@ -1,0 +1,43 @@
+.excontainer{
+    border-width: 1px;
+        border-style: solid;
+        border-radius: 20px;
+        border-color: rgb(239, 235, 235);
+        width: 350px;
+        height: 205px;
+        background-color: white;
+        margin-left: 30px;
+        position: absolute;
+        top:79px;
+        left:760px
+}
+#eximg{
+     height: 129px;
+    margin-top: 9px;
+    margin-left: 9px;
+}
+#excount{
+    font-size: 80px;
+    position: absolute;
+    top:-37px;
+    left:160px;
+}
+
+#ex{
+    position: absolute;
+    top:1px;
+    left:160px;
+}
+#aex{
+    color:gray;
+    position: absolute;
+    top:124px;
+    left:160px;
+}
+#exva{
+     color:rgb(133, 0, 133);
+    position: absolute;
+
+        left: 40px;
+        top:140px;
+}

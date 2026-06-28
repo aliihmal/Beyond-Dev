@@ -55,4 +55,11 @@ export class AssignmentController{
         const Assingments = await this.assignmentService.getAssignmentOfCourse(courseId,studentId);
         res.status(200).json({"message":"Assignment of specific course were retrived","assignment":Assingments});
     }
+    async getAssignmentNb(req:Request,res:Response):Promise<void>{
+        const studentid = req.params.studentId as string;
+        const nb =await this.assignmentService.getAssignmentNbForstudent(studentid);
+        res.status(200).json({"message":"number of assignment where retrived ",
+                               "nb":nb,
+        });
+    }
 }
